@@ -85,7 +85,7 @@ cd -
 
 genisoimage -verbose \
             -iso-level 1 \
-            -sysid "LINUX" \
+            -sysid "$(uname | tr 'a-z' 'A-Z')" \
             -V "KODAKCD" \
             -A "GENISOIMAGE - HAVE A NICE DAY" \
             -publisher "KODAK" \
