@@ -53,6 +53,10 @@ for INPUT_DIRECTORY in $*; do
 
 done
 
+# real Kodak Picture CD's have an empty 95MiB file on them,
+# no clue why, my best guess is legacy device compatibility
+dd if=/dev/zero of=${OUTPUT_DIRECTORY}/COMP95.DAT bs=1M count=95
+
 INFO_CD_IMAGES=$((${TOTAL_FILE_SEQUENCE} + 1))
 INFO_CD_DATE=$(date "+%Y:%m:%d %H:%M:%S")
 
